@@ -1,0 +1,17 @@
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\bin\Debug\LibrarySoln.exe.config
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\bin\Debug\LibrarySoln.exe
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\bin\Debug\LibrarySoln.pdb
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\bin\Debug\LibraryDAL.dll
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\bin\Debug\LibraryDAL.pdb
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\obj\Debug\LibraryUI.csprojAssemblyReference.cache
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\obj\Debug\LibrarySoln.AddPrintery.resources
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\obj\Debug\LibrarySoln.Login.resources
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\obj\Debug\LibrarySoln.Properties.Resources.resources
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\obj\Debug\LibrarySoln.Signup.resources
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\obj\Debug\LibrarySoln.UserProfile.resources
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\obj\Debug\LibrarySoln.UserScreen.resources
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\obj\Debug\LibraryUI.csproj.GenerateResource.cache
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\obj\Debug\LibraryUI.csproj.CoreCompileInputs.cache
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\obj\Debug\LibraryUI.csproj.CopyComplete
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\obj\Debug\LibrarySoln.exe
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibrarySoln\obj\Debug\LibrarySoln.pdb

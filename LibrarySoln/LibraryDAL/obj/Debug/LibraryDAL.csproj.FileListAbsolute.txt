@@ -1,0 +1,6 @@
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibraryDAL\bin\Debug\LibraryDAL.dll
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibraryDAL\bin\Debug\LibraryDAL.pdb
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibraryDAL\obj\Debug\LibraryDAL.csprojAssemblyReference.cache
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibraryDAL\obj\Debug\LibraryDAL.csproj.CoreCompileInputs.cache
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibraryDAL\obj\Debug\LibraryDAL.dll
+C:\Users\mucah\OneDrive\Masaüstü\LibraryApp (1)\LibrarySoln\LibraryDAL\obj\Debug\LibraryDAL.pdb
