@@ -67,3 +67,37 @@ davranışı korumaya dikkat edilerek küçük refactor'lar yapıldı.
     daha sağlam olurdu ama davranışı korumak için değiştirilmedi (test ile belgelendi).
   - Repoda `bin/`, `obj/`, `.vs/` klasörleri commit'lenmiş; `.gitignore` eklenmesi önerilir
     (test projesinin build çıktıları da untracked olarak görünecektir).
+
+## Ek tur — kalan boşluklar (2026-09-24)
+
+Bu turda repo tekrar tarandı; `DAL` ve `FormRules` zaten önceki turda kapsamlı şekilde
+test edilmişti (bkz. yukarıdaki bölümler). Tek gerçek boşluk **hiç test edilmemiş olan
+`SqlDbExecutor`** ve **`DAL()` parametresiz constructor'ıydı**. Refactor gerekmedi,
+sadece iki yeni test eklendi:
+
+- **`SqlDbExecutorTests.cs` (yeni dosya):** `SqlDbExecutor.Fill`/`ExecuteNonQuery` gerçek
+  bir SQL Server bağlantısı gerektirdiği için hâlâ unit test kapsamı dışında (ağa bağlanan
+  bir test yavaş/kararsız olur ve CI'da timeout'a düşebilir). Ancak `SqlConnection`
+  constructor'ı/`ConnectionString` setter'ı bağlanmadan, senkron olarak sözdizimi ve
+  desteklenmeyen anahtar kelime hatalarını fırlatır — bu davranış ağ gerektirmediği için
+  güvenle test edilebilir: geçersiz anahtar kelime (`ArgumentException`), kapatılmamış
+  tırnak (`ArgumentException`), geçerli bağlantı dizesi (hata yok) ve `null` bağlantı
+  dizesi (hata yok — `SqlConnection(null)` boş dizeyle eşdeğerdir).
+- **`DALTests.cs`:** `DefaultConstructor_WiresUpSqlExecutorAndMessageBoxNotifier_DoesNotThrow`
+  eklendi — `new DAL()` (config'ten connection string okuyup `SqlDbExecutor` + gerçek
+  `MessageBoxNotifier` kuran parametresiz constructor) hiç test edilmiyordu. Test
+  projesinde `ConnectionString` App.config anahtarı olmadığından `ConfigurationManager`
+  `null` döner; bu da `SqlConnection(null)` için güvenlidir, dolayısıyla test bağlantı
+  açmadan/`MessageBox` göstermeden geçer.
+
+**İncelenip test edilebilir yeni mantık bulunamayan yerler:** `AddPrintery`, `UserProfile`,
+`UserScreen`, `Login`, `Signup`, `Program` — event handler'ların geri kalanı doğrudan
+WinForms kontrollerine (`ComboBox.SelectedItem`, `DataGridView.SelectedRows`, `Show`/`Hide`)
+bağımlı; bunları test edilebilir kılmak davranışı koruyan küçük bir refactor'un ötesine
+geçer (UI/DAL ayrımı için daha büyük bir mimari değişiklik gerekir), bu yüzden dokunulmadı.
+
+**Doğrulama durumu:** Bu ortamda hâlâ `dotnet`/`msbuild`/`mono` yok; yeni testler de
+derlenip çalıştırılamadı. Kod elle incelendi; `SqlConnection` constructor'ının geçersiz
+anahtar kelime/sözdizimi hatalarını senkron fırlattığı .NET Framework'ün belgelenmiş,
+bilinen davranışıdır. Windows'ta `dotnet test LibrarySoln/LibrarySoln.sln` ile
+doğrulanmalıdır.

@@ -59,6 +59,18 @@ namespace LibrarySoln.Tests
 			Assert.ThrowsException<ArgumentNullException>(() => new DAL(db, null));
 		}
 
+		[TestMethod]
+		public void DefaultConstructor_WiresUpSqlExecutorAndMessageBoxNotifier_DoesNotThrow()
+		{
+			// Baglanti gercekten acilmadigi surece (Fill/ExecuteNonQuery cagrilmadigi surece)
+			// SqlConnection kurulumu hata vermez; test projesinde "ConnectionString" App.config
+			// anahtari olmadigindan ConfigurationManager null dondurur, bu da SqlConnection(null)
+			// icin gecerlidir (bos baglanti dizesiyle esdeger).
+			DAL defaultDal = new DAL();
+
+			Assert.IsNotNull(defaultDal);
+		}
+
 		// ---------- PRC_LOGIN ----------
 
 		[TestMethod]
