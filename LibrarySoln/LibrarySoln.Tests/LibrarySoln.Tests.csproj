@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <RootNamespace>LibrarySoln.Tests</RootNamespace>
+    <AssemblyName>LibrarySoln.Tests</AssemblyName>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- net461 destekleyen son surumler (Test.Sdk 17.4+ ve MSTest 3.x net462+ istiyor). -->
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
+    <!-- Targeting pack kurulu olmayan makinelerde (orn. CI) derleyebilmek icin. -->
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LibraryDAL\LibraryDAL.csproj" />
+    <ProjectReference Include="..\LibrarySoln\LibraryUI.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -31,14 +31,7 @@ namespace LibrarySoln
 			try
 			{
 
-				string categories = "";
-				for (int i = 0; i < clbBookCategory.CheckedItems.Count; i++)
-				{
-					if (i == 0)
-						categories += clbBookCategory.CheckedItems[i];
-					else
-						categories += ";" + clbBookCategory.CheckedItems[i];
-				}
+				string categories = FormRules.JoinCategories(clbBookCategory.CheckedItems);
 				dl.PRC_DML_BOOK("I", tbBookName.Text, dpPrinteryDate.Value.ToShortDateString(), tbWriterName.Text, tbWriterSurname.Text, cbPrintery.SelectedItem.ToString(), categories,
 					cbBookType.SelectedItem.ToString(), Convert.ToInt32(tbHirePrice.Text));
 
@@ -114,7 +107,7 @@ namespace LibrarySoln
 				{
 					DAL dl = new DAL();
 					int bookId = Convert.ToInt32(dgvBooks.SelectedRows[0].Cells["bookId"].Value.ToString());
-					string responseTime = DateTime.Now.AddDays(7).ToShortDateString();
+					string responseTime = FormRules.GetResponseDate(DateTime.Now).ToShortDateString();
 					int price = Convert.ToInt32(dgvBooks.SelectedRows[0].Cells["hirePrice"].Value.ToString());
 					int sonuc=dl.PRC_DML_HIRE("I", bookId, userName, responseTime, 0, price,0);
 					if(sonuc>0)
