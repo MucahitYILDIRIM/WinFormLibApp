@@ -26,9 +26,10 @@ namespace LibrarySoln
 		{
 			DAL dl = new DAL();
 			DataTable userInformation = dl.PRC_LOGIN(tbUserName.Text, tbPassword.Text);
-			if(userInformation.Rows.Count != 0)
+			string loggedInUserName = FormRules.GetLoggedInUserName(userInformation);
+			if(loggedInUserName != null)
 			{
-				UserScreen userScreen = new UserScreen(userInformation.Rows[0].ItemArray[6].ToString());
+				UserScreen userScreen = new UserScreen(loggedInUserName);
 				userScreen.Owner = this;
 				userScreen.Show();
 				this.Hide();

@@ -56,6 +56,7 @@
     <Compile Include="AddPrintery.Designer.cs">
       <DependentUpon>AddPrintery.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRules.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

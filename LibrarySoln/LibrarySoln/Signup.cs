@@ -20,7 +20,7 @@ namespace LibrarySoln
 
 		private void btnSignUp_Click(object sender, EventArgs e)
 		{
-			if (String.IsNullOrEmpty(tbName.Text) || String.IsNullOrEmpty(tbSurname.Text) || String.IsNullOrEmpty(tbUserName.Text) || String.IsNullOrEmpty(tbPassword.Text))
+			if (!FormRules.AreAllFilled(tbName.Text, tbSurname.Text, tbUserName.Text, tbPassword.Text))
 			{
 				MessageBox.Show("Alanlari Tam Olarak Doldurunuz");
 			}
